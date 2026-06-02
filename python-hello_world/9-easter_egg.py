@@ -1,2 +1,5 @@
 #!/usr/bin/python3
-print("\"The Zen of Python\", by TimPeters\n")
+with open("helper.txt", "r") as f:
+    data = f.read()
+print(data)
+
