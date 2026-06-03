@@ -8,5 +8,6 @@ def main():
         k += int(sys.argv[i])
     print(k)
 
+
 if __name__ == "__main__":
     main()
