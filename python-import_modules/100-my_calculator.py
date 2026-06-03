@@ -10,7 +10,8 @@ def main():
     if sys.argv[2] not in ["+", "-", "*", "/"]:
         print("Available operators: +, -, * and /")
         exit(1)
-    a, b = int(sys.argv[1]), int(sys.argv[3])
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
     c = {
      "+": add,
      "-": sub,
