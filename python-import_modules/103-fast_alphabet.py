@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-wow = lambda a=90: (wow(a - 1) if a > 65 else None, print(chr(a), end=""))[1]
-print(wow() or "\n", end="")
+wow = lambda a=90: a > 65 and (wow(a - 1), print(chr(a), end=""))[1]
+wow() or print()
