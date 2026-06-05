@@ -1,5 +1,5 @@
 #!/usr/bin/python3
- import calculator_1 as calc, sys
+import calculator_1 as calc, sys
 
 
 def main():
