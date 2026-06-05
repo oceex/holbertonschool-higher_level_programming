@@ -10,7 +10,7 @@ def main():
     op = sys.argv[2]
 
     if op not in ["+", "-", "*", "/"]:
-        print("Available operators: +, -, * and /")
+        print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
     a = int(sys.argv[1])
