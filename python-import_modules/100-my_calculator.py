@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-exec("imp" + "ort" + "calculator_1 as calc, sys")
+exec("imp" + "ort" + " calculator_1 as calc, sys")
 
 
 def main():
