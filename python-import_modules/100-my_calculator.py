@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
-import sys
+ import calculator_1 as calc, sys
 
 
 def main():
@@ -17,15 +16,16 @@ def main():
     a = int(sys.argv[1])
     b = int(sys.argv[3])
     c = {
-     "+": add,
-     "-": sub,
-     "*": mul,
-     "/": div
+     "+": calc.add,
+     "-": calc.sub,
+     "*": calc.mul,
+     "/": calc.div
     }
 
     print("{} {} {} = {}".format(a, op, b, c[op](a, b)))
 
     exit(0)
+
 
 if __name__ == "__main__":
     main()
