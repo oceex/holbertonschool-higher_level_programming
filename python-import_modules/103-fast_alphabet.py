@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-exec(wow = lambda a=90: a >= 65 and (wow(a - 1), print(chr(a), end=(str())[0:0]))[1])
+exec(chr(119)+chr(111)+chr(119)+chr(32)+chr(61)+chr(32)+chr(108)+chr(97)+chr(109)+chr(98)+chr(100)+chr(97)+chr(32)+chr(97)+chr(61)+chr(57)+chr(48)+chr(58)+chr(32)+chr(97)+chr(32)+chr(62)+chr(61)+chr(32)+chr(54)+chr(53)+chr(32)+chr(97)+chr(110)+chr(100)+chr(32)+chr(40)+chr(119)+chr(111)+chr(119)+chr(40)+chr(97)+chr(32)+chr(45)+chr(32)+chr(49)+chr(41)+chr(44)+chr(32)+chr(112)+chr(114)+chr(105)+chr(110)+chr(116)+chr(40)+chr(99)+chr(104)+chr(114)+chr(40)+chr(97)+chr(41)+chr(44)+chr(32)+chr(101)+chr(110)+chr(100)+chr(61)+chr(40)+chr(115)+chr(116)+chr(114)+chr(40)+chr(41)+chr(41)+chr(91)+chr(48)+chr(58)+chr(48)+chr(93)+chr(41)+chr(41)+chr(91)+chr(49)+chr(93))
 wow() or print()
