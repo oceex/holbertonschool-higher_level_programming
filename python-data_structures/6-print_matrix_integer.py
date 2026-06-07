@@ -3,8 +3,8 @@
 
 def print_matrix_integer(matrix=[[]]):
     m = len(matrix)
-    if m == 0:
-        print("")
+    if len(matrix[m - 1]):
+        print()
         return
     for i in range (m):
         for j in range (len(matrix[i])):
