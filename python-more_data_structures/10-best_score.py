@@ -9,3 +9,4 @@ def best_score(a_dictionary):
     for n in a_dictionary:
         if a_dictionary[n] > best:
             best = a_dictionary[n]
+    return best
