@@ -4,5 +4,7 @@
 def square_matrix_simple(matrix=[]):
     mat = [[]]
     for i in range(len(matrix)):
+        mat.append([])
         for j in range(len(matrix[i])):
             mat[i].append(matrix[i][j] * matrix[i][j])
+    return mat
