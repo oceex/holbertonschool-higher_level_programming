@@ -2,7 +2,7 @@
 
 
 def roman_to_int(roman_string):
-    if not type(roman_string) == type("leen"):
+    if not isinstance(roman_string, str):
         return 0
     roman = {
             'I': 1,
