@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 def square_matrix_map(matrix=[]):
-    return list(list(map(lambda x: x * x if isinstance(x, int) else list(map(lambda w: w * w, x)), matrix)))
+    return[*map(lambda x:[*map(lambda w:w*w,x)]if type(x)==list else x*x,matrix)]
