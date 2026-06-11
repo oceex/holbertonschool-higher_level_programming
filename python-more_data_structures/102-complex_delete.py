@@ -9,3 +9,4 @@ def complex_delete(a_dictionary, value):
             if a_dictionary[n] == value:
                 a_dictionary.pop(n)
                 c = 1
+                break
