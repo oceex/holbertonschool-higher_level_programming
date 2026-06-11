@@ -9,14 +9,8 @@ def safe_print_list_integers(my_list=[], x=0):
             i += 1
             c += 1
             x -= 1
-        except Exception:
+        except (ValueError, TypeError):
             i += 1
             x -= 1
-        except IndexError:
-            print("IndexError: list index out of range")
-            break
-        except TypeError:
-            print("TypeError: list indices must be integers or slices, not str")
-            break
     print()
     return c
