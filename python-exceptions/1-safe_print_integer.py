@@ -6,5 +6,7 @@ def safe_print_integer(value):
         print("{:d}".format(value))
     except TypeError:
         return False
-    finally:
+    else:
         return True
+    finally:
+        print("No one will arrive here")
