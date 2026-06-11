@@ -4,8 +4,8 @@
 def safe_print_list(my_list=[], x=0):
     c = 0
     try:
-        for n in range(x):
-            print(f"{my_list[n]}", end="")
+        for i in range(x):
+            print("{}".format(my_list[i]), end="")
             c += 1
         print()
     except IndexError:
