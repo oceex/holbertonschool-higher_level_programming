@@ -10,3 +10,4 @@ def complex_delete(a_dictionary, value):
                 a_dictionary.pop(n)
                 c = 1
                 break
+    return a_dictionary
