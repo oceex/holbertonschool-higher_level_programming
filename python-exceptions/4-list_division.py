@@ -21,4 +21,4 @@ def list_division(my_list_1, my_list_2, list_length):
         finally:
             new.append(tmp)
             x += 1
-    return new
+    return new if len(new) else None
