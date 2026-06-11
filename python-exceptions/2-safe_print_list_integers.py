@@ -6,7 +6,8 @@ def safe_print_list_integers(my_list=[], x=0):
     while x > 0:
         try:
             print("{:d}".format(my_list[i]), end="")
-            i, c += 1
+            i += 1
+            c += 1
             x -= 1
         except IndexError:
             print("IndexError: list index out of range")
