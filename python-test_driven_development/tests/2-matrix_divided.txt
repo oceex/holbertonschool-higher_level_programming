@@ -36,5 +36,5 @@ Traceback (most recent call last):
 ...
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
->>> matrix_divided([[0, 0, 0],[0, 0, 0]], 1.0)
-[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+>>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]

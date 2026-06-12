@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 """
 This module provides the function matrix_divided(matrix, div) which returns
 the div of the matrix by the div.
