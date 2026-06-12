@@ -3,9 +3,9 @@
 This module provides the function add_integer(a, b) which returns
 the sum of two numbers as an integer.
 
-Doctests for reading project.txt:
+Doctests for reading 0-add_integer.txt:
 
->>> with open("tests/project.txt") as f:
+>>> with open("tests/0-add_integer.txt") as f:
 ...     f.read().strip()
 'hello'
 """
@@ -22,4 +22,4 @@ def add_integer(a, b=98):
 
 if __name__ == "__main__":
     import doctest
-    doctest.testfile("tests/project.txt")
+    doctest.testfile("tests/0-add_integer.txt")
