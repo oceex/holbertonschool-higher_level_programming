@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+import sys
+
+
+def safe_function(fct, *args):
+    try:
+        v = fct(*args)
+        return v
+    except Exception as x:
+        print(x.with_traceback(None), File=sys.stderr)
+        return None
