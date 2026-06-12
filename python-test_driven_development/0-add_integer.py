@@ -2,6 +2,12 @@
 """
 This module provides the function add_integer(a, b) which returns
 the sum of two numbers as an integer.
+
+Doctests for reading project.txt:
+
+>>> with open("tests/project.txt") as f:
+...     f.read().strip()
+'hello'
 """
 
 def add_integer(a, b=98):
