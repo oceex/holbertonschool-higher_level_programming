@@ -6,7 +6,7 @@ def list_division(my_list_1, my_list_2, list_length):
     new = []
     while not list_length == x:
         try:
-            tmp = 0.0
+            tmp = 0
             tmp = my_list_1[x]/my_list_2[x]
 
         except ZeroDivisionError:
