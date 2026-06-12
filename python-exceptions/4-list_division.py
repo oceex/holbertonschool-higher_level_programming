@@ -2,7 +2,7 @@
 
 
 def list_division(my_list_1, my_list_2, list_length):
-    x, tmp = 0, 0.0
+    x, tmp = 0, 0
     new = []
     while not list_length == x:
         try:
