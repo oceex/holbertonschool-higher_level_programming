@@ -10,8 +10,10 @@ Doctests for reading 0-add_integer.txt:
 'hello'
 """
 
+
 def add_integer(a, b=98):
     """ Saifly Addition function """
+
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     elif not isinstance(b, (int, float)):
