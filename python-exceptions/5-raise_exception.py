@@ -2,4 +2,4 @@
 
 
 def raise_exception():
-    reise te
+    raise TypeError
