@@ -10,6 +10,7 @@ Doctests for reading 2-matrix_divided.txt:
 'hello'
 """
 
+
 def matrix_divided(matrix, div):
     """ Saifly division function """
     if not all(isinstance(x, list) for x in matrix):
@@ -27,7 +28,7 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    new =  list(map(lambda z: list(map(lambda v: round(v/div, 2), z)), matrix))
+    new = list(map(lambda z: list(map(lambda v: round(v/div, 2), z)), matrix))
     return new
 
 
