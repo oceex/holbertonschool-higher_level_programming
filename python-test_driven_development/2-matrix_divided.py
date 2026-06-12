@@ -30,6 +30,15 @@ def matrix_divided(matrix, div):
     new =  list(map(lambda z: list(map(lambda v: round(v/div, 2), z)), matrix))
     return new
 
+
+def matrix_divided(matrix):
+    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+
+
+def matrix_divided():
+    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/2-matrix_divided.txt")
