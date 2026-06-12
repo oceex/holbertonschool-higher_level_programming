@@ -31,16 +31,6 @@ def matrix_divided(matrix, div):
     return new
 
 
-def matrix_divided(matrix):
-    """ missing 1 argument """
-    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-
-
-def matrix_divided():
-    """ missing 2 argument """
-    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-
-
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/2-matrix_divided.txt")
