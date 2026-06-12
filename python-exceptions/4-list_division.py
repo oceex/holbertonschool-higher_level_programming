@@ -22,7 +22,7 @@ def list_division(my_list_1, my_list_2, list_length):
             break
         finally:
             if tmp == 0:
-                new.append((int)tmp)
+                new.append(int(tmp))
             else:
                 new.append(tmp)
             x += 1
