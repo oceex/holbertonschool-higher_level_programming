@@ -17,18 +17,18 @@ def matrix_divided(matrix, div):
     """ Saifly division function """
     if not all(isinstance(x, list) for x in matrix):
         raise TypeError("matrix must be a matrix "
-                "(list of lists) of integers/floats")
+                        "(list of lists) of integers/floats")
     m = -1
     for n in matrix:
         if not all(isinstance(x, (int, float)) for x in n):
             raise TypeError("matrix must be a matrix "
-                "(list of lists) of integers/floats")
+                            "(list of lists) of integers/floats")
         if m == -1:
             m = len(n)
         else:
             if not m == len(n):
                 raise TypeError("Each row of the matrix "
-                "must have the same size")
+                                "must have the same size")
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:
