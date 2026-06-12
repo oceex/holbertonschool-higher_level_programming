@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-
+"""
+This module provides the function add_integer(a, b) which returns
+the sum of two numbers as an integer.
+"""
 
 def add_integer(a, b=98):
     """ Saifly Addition function """
