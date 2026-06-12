@@ -1,0 +1,21 @@
+>>> import importlib
+>>> say_my_name = importlib.import_module('3-say_my_name'>.say_my_name
+
+>>> say_my_name(34, "w")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("34", 2)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name("leen")
+My name is leen
+
+>>> say_my_name()
+Traceback (most recent call last):
+...
+
+
