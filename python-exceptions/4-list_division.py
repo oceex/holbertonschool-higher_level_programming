@@ -21,6 +21,9 @@ def list_division(my_list_1, my_list_2, list_length):
         except Exception:
             break
         finally:
-            new.append(tmp)
+            if tmp == 0:
+                new.append((int)tmp)
+            else:
+                new.append(tmp)
             x += 1
     return new
