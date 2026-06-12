@@ -7,5 +7,5 @@ def safe_function(fct, *args):
         v = fct(*args)
         return v
     except Exception as x:
-        print(x.with_traceback(None), File=sys.stderr)
+        print(x.with_traceback(None), file=sys.stderr)
         return None
