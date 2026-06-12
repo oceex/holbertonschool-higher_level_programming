@@ -4,8 +4,6 @@
 def list_division(my_list_1, my_list_2, list_length):
     x, tmp = 0, 0.0
     new = []
-    if not len(my_list_1) or not len(my_list_2):
-        return new
     while not list_length == x:
         try:
             tmp = 0.0
