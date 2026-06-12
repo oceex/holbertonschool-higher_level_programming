@@ -8,7 +8,7 @@ def list_division(my_list_1, my_list_2, list_length):
         return None
     while not list_length == x:
         try:
-            tmp = 0
+            tmp = 0.0
             tmp = my_list_1[x]/my_list_2[x]
 
         except ZeroDivisionError:
@@ -21,9 +21,6 @@ def list_division(my_list_1, my_list_2, list_length):
         except Exception:
             break
         finally:
-            if tmp == 0:
-                new.append(int(tmp))
-            else:
-                new.append(tmp)
+            new.append(tmp)
             x += 1
     return new
