@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" privity """
+""" Module privity """
 
 
 class Square:
@@ -12,6 +12,4 @@ class Square:
         Args:
             __size: The size of the square.
         """
-
-
         self.__size = size
