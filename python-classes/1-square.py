@@ -4,8 +4,6 @@
 
 class Square:
     """ Square size private :| """
-
-
     def __init__(self, size):
         """Initialize a new Square.
 
