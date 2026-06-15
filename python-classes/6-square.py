@@ -6,8 +6,8 @@ class Square:
     """ Square class """
     def __init__(self, size=0, position=(0, 0)):
         """ intioalazing new Suqare """
-        self.size = size
-        self.position = position
+        size(self, size)
+        position(self, position)
 
     @property
     def size(self):
