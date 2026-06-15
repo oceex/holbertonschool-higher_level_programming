@@ -61,4 +61,4 @@ class Rectangle:
         return v
     def __repr__(self):
         " the Rectangle's call new "
-        return "Rectangle(" + self.width + ", " + self.height + ")"
+        return f"Rectangle({self.width}, {self.height})"
