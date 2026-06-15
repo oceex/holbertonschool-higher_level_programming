@@ -34,7 +34,7 @@ class Square:
         """ setting Square position """
         if isinstance(s, tuple):
             if len(s) == 2:
-                if isinstance((s[0], s[1]), int) and s[0] > 0 and s[1] > 0:
+                if isinstance(s[0], int) and isinstance(s[1], int) and s[0] > 0 and s[1] > 0:
                     self.__position = s
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
