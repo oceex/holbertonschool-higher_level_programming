@@ -57,7 +57,8 @@ class Rectangle:
         for a in range(self.height):
             for b in range(self.width):
                 v += '#'
-            v += '\n'
+            if a != self.height - 1 and self.width:
+                v += '\n'
         return v
     def __repr__(self):
         " the Rectangle's call new "
