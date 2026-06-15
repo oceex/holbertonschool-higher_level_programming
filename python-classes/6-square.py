@@ -6,8 +6,8 @@ class Square:
     """ Square class """
     def __init__(self, size=0, position=(0, 0)):
         """ intioalazing new Suqare """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -32,8 +32,8 @@ class Square:
     @position.setter
     def position(self, value):
         """ setting Square position """
-        if (not isinstance(value, tuple) or len(value) != 2 or
-                not all(isinstance(n, int) and n >= 0 for n in value)):
+        if (not isinstance(value, tuple) or not len(value) == 2 or
+                (not all(isinstance(n, int) and n >= 0 for n in value))):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -43,8 +43,8 @@ class Square:
 
     def my_print(self):
         """ printing the Square """
-            print('\n' * self.__position[1], end="")
-            if not self.__size == 0:
-                for n in range(self.__size):
-                    print(' ' * self.__position[0] + '#' * self.__size)
+        print('\n' * self.__position[1], end="")
+        if not self.__size == 0:
+            for n in range(self.__size):
+                print(' ' * self.__position[0] + '#' * self.__size)
 
