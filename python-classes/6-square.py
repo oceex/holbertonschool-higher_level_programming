@@ -30,7 +30,7 @@ class Square:
             self.__size = size
 
     @position.setter
-    def position(self, s):
+    def position(self, value):
         """ setting Square position """
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(n, int) and n >= 0 for n in value)):
