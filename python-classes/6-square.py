@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" bet SQUARE version erer """
+""" bset SQUARE version erer """
 
 
 class Square:
@@ -43,9 +43,7 @@ class Square:
 
     def my_print(self):
         """ printing the Square """
-        if self.__size == 0:
-            print()
-        else:
             print('\n' * self.__position[1], end="")
             for n in range(self.__size):
                 print(' ' * self.__position[0] + '#' * self.__size)
+
