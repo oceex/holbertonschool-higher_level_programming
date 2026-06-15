@@ -54,8 +54,8 @@ class Rectangle:
     def __str__(self):
         " the Rectangle printing "
         v = ""
-        for a in range(self.width):
-            for b in range(self.height):
+        for a in range(self.height):
+            for b in range(self.width):
                 v += '#'
             v += '\n'
         return v
