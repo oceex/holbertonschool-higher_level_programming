@@ -59,6 +59,4 @@ class Rectangle:
                 v += '#'
             if a != self.height - 1 and self.width:
                 v += '\n'
-        if not self.width:
-            v += '\n'
         return v
