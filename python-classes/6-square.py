@@ -7,7 +7,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """ intioalazing new Suqare """
         self.__size = size
-        self.position = position
+        self.__position = position
 
     @property
     def size(self):
@@ -48,9 +48,9 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            print('\n' * self.__position[1])
+            print('\n' * self.__position[1], end="")
             for n in range(self.__size):
-                print(' ' * self.__position[0])
+                print(' ' * self.__position[0], end="")
                 for m in range(self.__size):
-                    print('#')
+                    print('#', end="")
                 print()
