@@ -82,7 +82,7 @@ class Rectangle:
         " compare between two rect's "
         if not isinstance(rect_1, Rectangle):
             TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
+        if not isinstance(rect_2, type(rect_1)):
             TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
