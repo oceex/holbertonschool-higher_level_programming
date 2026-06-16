@@ -59,6 +59,7 @@ class Rectangle:
     def __str__(self):
         " printing the cute little REC "
         c = ""
+        self.print_symbol = str(self.print_symbol)
         for n in range(self.__height):
             for m in range(self.__width):
                 c += self.print_symbol
