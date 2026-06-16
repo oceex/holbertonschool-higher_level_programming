@@ -61,7 +61,7 @@ class Rectangle:
             if n != self.__height - 1:
                 c += '\n'
         if not self.__height:
-           c += '\n'
+            c += '\n'
 
     def __repr__(self):
         " to dublecate the rectangle "
@@ -70,4 +70,3 @@ class Rectangle:
     def __del__(self):
         " To say Goodbye to my little Rec:( "
         print("Bye rectangle...")
-
