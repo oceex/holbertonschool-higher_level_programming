@@ -60,7 +60,7 @@ class Rectangle:
                 c += '#'
             if n != self.__height - 1:
                 c += '\n'
-       if not self.__height:
+        if not self.__height:
            c += '\n'
 
     def __repr__(self):
