@@ -13,29 +13,29 @@ class Node:
         self.data = data
         self.next_node = next_node
 
-   @property
-   def data(self):
-       " return the data it hold "
-       return self.__data
+    @property
+    def data(self):
+        " return the data it hold "
+        return self.__data
 
-   @property
-   def next_node(self):
-       " return the link that it hold "
-       return self.__next_node
+    @property
+    def next_node(self):
+        " return the link that it hold "
+        return self.__next_node
 
-   @data.setter
-   def data(self, val):
-       " set the data it hold "
-       if not isinstance(val, int):
-           raise TypeError("data must be an integer")
-       self.__data = val
+    @data.setter
+    def data(self, val):
+        " set the data it hold "
+        if not isinstance(val, int):
+            raise TypeError("data must be an integer")
+        self.__data = val
 
-   @next_node.setter
-   def next_node(self, val):
-       " set the link that it hold "
-       if not (isinstance(val, Node) or val == None):
-           raise TypeError("next_node must be a Node object")
-       self.__next_node = val
+    @next_node.setter
+    def next_node(self, val):
+        " set the link that it hold "
+        if not (isinstance(val, Node) or val is None):
+            raise TypeError("next_node must be a Node object")
+        self.__next_node = val
 
 
 class SinglyLinkedList:
