@@ -56,6 +56,7 @@ class Square:
         if not self.__size == 0:
             m += '\n' * self.__position[1]
             for n in range(self.__size):
-                m += ' ' * self.__position[0] + '#' * self.__size
+                m += ' ' * self.__position[0] + '#' * self.__size + '\n'
         else:
             m += '\n'
+        return m
