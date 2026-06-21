@@ -4,7 +4,7 @@ adding print sorted list
 """
 
 
-class Mylist(list):
+class MyList(list):
     " sorting listss "
     def print_sorted(self):
         " wow is woww "
