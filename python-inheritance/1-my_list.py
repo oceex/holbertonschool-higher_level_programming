@@ -10,7 +10,7 @@ class MyList(list):
         " wow is woww "
         m = sorted(self)
         print(m)
-
+        return m
 
 if __name__ == "__main__":
     import doctest
