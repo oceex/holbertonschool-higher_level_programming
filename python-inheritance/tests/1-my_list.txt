@@ -16,4 +16,5 @@
 [1, 1, 1, 1]
 >>> m = [1, 1, 1, 1]
 >>> MyList(m).print_sorted() == m
+[1, 1, 1, 1]
 False
