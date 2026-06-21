@@ -44,7 +44,7 @@ Traceback (most recent call last):
 ...
 TypeError: ass must be an integer
 
->>> bg.integer_validator("ass", True)
+>>> bg.integer_validator("age", True)
 
 
 >>> bg.integer_validator("ass", {3, 4})
