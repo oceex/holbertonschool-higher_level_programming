@@ -3,6 +3,6 @@
 >>> MyList = importlib.import_module("1-my_list").MyList
 
 >>> MyList([2,1,4,4]).print_sorted()
-[1,2,4,4]
+[1, 2, 4, 4]
 >>> MyList([1,1,1,1]).print_sorted()
-[1,1,1,1]
+[1, 1, 1, 1]
