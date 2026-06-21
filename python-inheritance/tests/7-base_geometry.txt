@@ -38,3 +38,21 @@ ValueError: ass must be greater than 0
 Traceback (most recent call last):
 ...
 TypeError: ass must be an integer
+
+>>> bg.integer_validator("ass", (4,))
+Traceback (most recent call last):
+...
+TypeError: ass must be an integer
+
+>>> bg.integer_validator("ass", True)
+
+
+>>> bg.integer_validator("ass", {3, 4})
+Traceback (most recent call last):
+...
+TypeError: ass must be an integer
+
+>>> bg.integer_validator("ass", None)
+Traceback (most recent call last):
+...
+TypeError: ass must be an integer
