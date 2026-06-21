@@ -6,4 +6,4 @@ in
 
 def inherits_from(obj, a_class):
     " inherits "
-    return isinstance(obj, a_class)
+    return obj.__class__ != a_class and issubclass(obj.__class__, a_class)
