@@ -14,8 +14,8 @@ class Rectangle(BaseGeometry):
         try:
             self.integer_validator("width", width)
             self.integer_validator("height", height)
-        except Exception:
-            print(Exception)
+        except Exception as e:
+            print(f"[{type(e).__name__}]",e)
         else:
             self.__width = width
             self.__height = height
