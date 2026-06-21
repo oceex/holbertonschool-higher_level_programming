@@ -2,7 +2,7 @@
 >>> mod = importlib.import_module("1-my_list")
 >>> MyList = mod.MyList
 
->>> print(MyList([2,1,4,4]).print_sorted())
+>>> MyList([2,1,4,4].print_sorted()
 [1, 2, 4, 4]
 >>> print(MyList([1,1,1,1]).print_sorted())
 [1, 1, 1, 1]

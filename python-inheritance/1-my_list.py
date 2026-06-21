@@ -9,6 +9,7 @@ class MyList(list):
     def print_sorted(self):
         " wow is woww "
         m = sorted(self)
+        print(m)
         return m
 
 
