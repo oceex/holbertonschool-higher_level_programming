@@ -8,7 +8,8 @@ class MyList(list):
     " sorting listss "
     def print_sorted(self):
         " wow is woww "
-        return sorted(self)
+        m = sorted(self)
+        return m
 
 
 if __name__ == "__main__":
