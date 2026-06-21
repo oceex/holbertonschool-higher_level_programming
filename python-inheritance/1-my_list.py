@@ -5,9 +5,9 @@ adding print sorted list
 
 
 class Mylist(list):
-    " sorting "
+    " sorting listss "
     def print_sorted(self):
-        " wow "
+        " wow is woww "
         m = sorted(self)
         print(m)
 
