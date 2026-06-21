@@ -1,6 +1,5 @@
 >>> import importlib
 >>> mod = importlib.import_module("1-my_list")
->>> print_sorted = mod.print_sorted
 >>> MyList = mod.MyList
 
 >>> MyList([2,1,4,4]).print_sorted()
