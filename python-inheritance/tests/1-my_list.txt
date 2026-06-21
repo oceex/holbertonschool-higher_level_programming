@@ -1,7 +1,7 @@
 >>> import importlib
 >>> print_sorted = importlib.import_module("1-my_list.py").print_sorted
 
->>> print_sorted([1,4,2,4])
+>>> MyList([2,1,4,4]).print_sorted()
 [1,2,4,4]
->>> print_sorted([1,1,1,1])
+>>> MyList([1,1,1,1]).print_sorted()
 [1,1,1,1]
