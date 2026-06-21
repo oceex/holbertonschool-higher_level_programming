@@ -6,3 +6,11 @@
 [1, 2, 4, 4]
 >>> MyList([1,1,1,1]).print_sorted()
 [1, 1, 1, 1]
+>>> MyList([]).print_sorted()
+None
+>>> MyList([1,1,-1,1]).print_sorted()
+[-1, 1, 1, 1]
+>>> MyList([1,1,1,1]).append(-1)
+[1, 1, 1, 1, -1]
+>>> priint(MyList([1,1,1,1]))
+[1, 1, 1, 1]
