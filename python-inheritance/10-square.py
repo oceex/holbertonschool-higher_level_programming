@@ -13,8 +13,8 @@ class Square(Rectangle):
         " intioalzing "
         try:
             self.integer_validator("size", size)
-        except Exception:
-            pass
+        except Exception as e:
+            print(e)
         else:
             self.__size = size
 
