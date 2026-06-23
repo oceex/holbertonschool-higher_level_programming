@@ -6,11 +6,11 @@ devopling int class
 
 class MyInt(int):
     " more rebel "
-    def __eq__(self, other):
+    def __ne__(self, other):
         " equaltion "
         return int(self) == other
 
-    def __ne__(self, other):
+    def __eq__(self, other):
         " not equa "
         return int(self) != other
 
