@@ -8,9 +8,9 @@ class MyInt(int):
     " more rebel "
     def __eq__(self, other):
         " equaltion "
-        return self == other
+        return int(self) == other
 
     def __ne__(self, other):
-        " equaltion "
-        return self != other
+        " not equa "
+        return int(self) != other
 
