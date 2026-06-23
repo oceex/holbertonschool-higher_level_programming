@@ -14,7 +14,7 @@ class Square(Rectangle):
         try:
             self.integer_validator("size", size)
         except Exception as e:
-            print(e)
+            print(f"[{type(e).__name__}]", e)
         else:
             self.__size = size
 
