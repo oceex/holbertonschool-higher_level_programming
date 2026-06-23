@@ -13,4 +13,3 @@ class MyInt(int):
     def __eq__(self, other):
         " not equa "
         return int(self) != other
-
