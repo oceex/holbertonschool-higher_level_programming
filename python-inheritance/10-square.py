@@ -12,7 +12,7 @@ class Square(Rectangle):
     def __init__(self, size):
         " intioalzing "
         try:
-            integer_validator("size", size)
+            self.integer_validator("size", size)
         except Exception:
             pass
         else:
