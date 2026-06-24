@@ -10,12 +10,10 @@ class Shape(ABC):
     " abstract "
     @abstractmethod
     def area(self):
-        " abc "
         pass
 
     @abstractmethod
     def perimeter(self):
-        " abc "
         pass
 
 
@@ -23,7 +21,10 @@ class Circle(Shape):
     " defing a Circle "
     def __init__(self, radius):
         " a circle "
-        self.__radius = radius
+        if radius > 0:
+            self.__radius = radius
+        else:
+            raise ValueError("radius most be positive")
 
     def area(self):
         " implementing abc "
@@ -38,8 +39,11 @@ class Rectangle(Shape):
     " defing a Rectangle "
     def __init__(self, width, height):
         " a rectangle "
-        self.__width = width
-        self.__height = height
+        if width > 0 and height > 0:
+            self.__width = width
+            self.__height = height
+        else:
+            raise ValueError("width and height most be positive")
 
     def area(self):
         " implementing abc "
