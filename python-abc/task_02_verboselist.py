@@ -24,3 +24,4 @@ class VerboseList(list):
         " adding notification message "
         x = super().pop(index)
         print(f"Popped [{x}] from the list.")
+        return x
