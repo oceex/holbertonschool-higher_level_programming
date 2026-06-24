@@ -6,27 +6,27 @@ k
 
 
 class Bird:
-    def fly():
+    def fly(self):
         print("The bird is flying")
 
-    def habitat():
+    def habitat(self):
         print("The bird lives in the sky")
 
 
 class Fish:
-    def swim():
+    def swim(self):
         print("The fish is swimming")
 
-    def habitat():
+    def habitat(self):
         print("The fish lives in water")
 
 
 class FlyingFish(Fish, Bird):
-    def swim():
+    def swim(self):
         print("The flying fish is swimming!")
 
-    def fly():
+    def fly(self):
         print("The flying fish is soaring!")
 
-    def habitat():
+    def habitat(self):
         print("The flying fish lives both in water and the sky!")
