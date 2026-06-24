@@ -21,10 +21,7 @@ class Circle(Shape):
     " defing a Circle "
     def __init__(self, radius):
         " a circle "
-        if radius > 0:
-            self.__radius = radius
-        else:
-            raise ValueError("radius most be positive")
+        self.__radius = radius
 
     def area(self):
         " implementing abc "
@@ -39,11 +36,8 @@ class Rectangle(Shape):
     " defing a Rectangle "
     def __init__(self, width, height):
         " a rectangle "
-        if width > 0 and height > 0:
-            self.__width = width
-            self.__height = height
-        else:
-            raise ValueError("width and height most be positive")
+        self.__width = width
+        self.__height = height
 
     def area(self):
         " implementing abc "
