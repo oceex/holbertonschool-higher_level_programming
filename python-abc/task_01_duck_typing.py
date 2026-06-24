@@ -23,15 +23,13 @@ class Circle(Shape):
         " a circle "
         self.__radius = radius
 
-    @abstractmethod
     def area(self):
         " implementing abc "
-        return self.__radius**2 * math.PI
+        return self.__radius**2 * math.pi
 
-    @abstractmethod
     def perimeter(self):
         " implementing abc "
-        return self.__radius * 2 * math.PI
+        return self.__radius * 2 * math.pi
 
 class Rectangle(Shape):
     " defing a Rectangle "
@@ -40,12 +38,10 @@ class Rectangle(Shape):
         self.__width = width
         self.__height = height
 
-    @abstractmethod
     def area(self):
         " implementing abc "
         return self.__width * self.__height
 
-    @abstractmethod
     def perimeter(self):
         " implementing abc "
         return  2 * (self.__width + self.__height)
@@ -54,4 +50,4 @@ def shape_info(self):
     " duck typing "
     are = self.area()
     per = self.perimeter()
-    print("Area: {}\nPerimeter: {}", are, per)
+    print(f"Area: {are}\nPerimeter: {per}")
