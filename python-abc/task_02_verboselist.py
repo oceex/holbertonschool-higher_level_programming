@@ -20,12 +20,7 @@ class VerboseList(list):
         super().remove(item)
         print(f"Removed [{item}] from the list.")
 
-    def pop(self, item):
+    def pop(self, index=-1):
         " adding notification message "
-        super().pop(item)
-        print(f"Added [{item}] to the list.")
-
-    def pop(self):
-        " adding notification message "
-        super().pop()
-        print(f"Popped [{self[len(self) - 1]}] from the list.")
+        x = super().pop(index)
+        print(f"Added [{x}] to the list.")
