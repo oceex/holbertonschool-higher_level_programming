@@ -21,31 +21,31 @@ class Circle(Shape):
     " defing a Circle "
     def __init__(self, radius):
         " a circle "
-        self.__radius = radius
+        self.radius = radius
 
     def area(self):
         " implementing abc "
-        return self.__radius**2 * math.pi
+        return self.radius**2 * math.pi
 
     def perimeter(self):
         " implementing abc "
-        return self.__radius * 2 * math.pi
+        return self.radius * 2 * math.pi
 
 
 class Rectangle(Shape):
     " defing a Rectangle "
     def __init__(self, width, height):
         " a rectangle "
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def area(self):
         " implementing abc "
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         " implementing abc "
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
 
 def shape_info(self):
