@@ -50,6 +50,5 @@ class Rectangle(Shape):
 
 def shape_info(self):
     " duck typing "
-    are = self.area()
-    per = self.perimeter()
-    print(f"Area: {are}\nPerimeter: {per}")
+    print(f"Area: {shape.area():.2f}")
+    print(f"Perimeter: {shape.perimeter():.2f}")
