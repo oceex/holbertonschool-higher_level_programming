@@ -23,4 +23,4 @@ class VerboseList(list):
     def pop(self, index=-1):
         " adding notification message "
         x = super().pop(index)
-        print(f"Added [{x}] to the list.")
+        print(f"Popped [{x}] from the list.")
