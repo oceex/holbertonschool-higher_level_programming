@@ -3,7 +3,7 @@
 SHAPES
 """
 from abc import ABC, abstractmethod
-
+import math
 
 class Shape(ABC):
     " abstract "
@@ -26,12 +26,12 @@ class Circle(Shape):
     @abstractmethod
     def area(self):
         " implementing abc "
-        return self.__radius**2 * 3.14
+        return self.__radius**2 * math.PI
 
     @abstractmethod
     def perimeter(self):
         " implementing abc "
-        return self.__radius * 2 * 3.14
+        return self.__radius * 2 * math.PI
 
 class Rectangle(Shape):
     " defing a Rectangle "
@@ -49,3 +49,9 @@ class Rectangle(Shape):
     def perimeter(self):
         " implementing abc "
         return  2 * (self.__width + self.__height)
+
+def shape_info(self):
+    " duck typing "
+    are = self.area()
+    per = self.perimeter()
+    print("Area: {}\nPerimeter: {}", are, per)
