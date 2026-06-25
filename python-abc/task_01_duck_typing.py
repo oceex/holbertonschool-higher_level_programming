@@ -56,7 +56,7 @@ class Circle(Shape):
         Args:
             radius (float): The radius of the circle.
         """
-        if radius <= 0:
+        if radius < 0:
             raise ValueError
         self.radius = radius
 
@@ -96,7 +96,7 @@ class Rectangle(Shape):
             width (float): The width of the rectangle.
             height (float): The height of the rectangle.
         """
-        if width <= 0 or height <= 0:
+        if (width < 0 or height < 0) and not (width < 0 and height < 0):
             raise ValueError
         self.width = width
         self.height = height
