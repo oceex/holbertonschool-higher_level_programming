@@ -8,7 +8,7 @@ and a `shape_info` function that operates on any object exposing
 those two methods, regardless of its actual type.
 """
 from abc import ABC, abstractmethod
-
+import math
 
 class Shape(ABC):
     """
@@ -47,7 +47,6 @@ class Circle(Shape):
     Attributes:
         radius (float): The radius of the circle.
     """
-    PI = 3.141592653589793
     def __init__(self, radius):
         """
         Initialize a Circle instance.
@@ -55,7 +54,7 @@ class Circle(Shape):
         Args:
             radius (float): The radius of the circle.
         """
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """
@@ -64,7 +63,7 @@ class Circle(Shape):
         Returns:
             float: The area of the circle.
         """
-        return PI * self.radius ** 2
+        return math.pi * self.radius ** 2
 
     def perimeter(self):
         """
@@ -73,7 +72,7 @@ class Circle(Shape):
         Returns:
             float: The circumference of the circle.
         """
-        return 2 * PI * self.radius
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
