@@ -13,4 +13,4 @@ def append_after(filename="", search_string="", new_string=""):
         for line in lines:
             f.write(line)
             if new_string in line:
-                f.write(new_string)xy
+                f.write(new_string)
