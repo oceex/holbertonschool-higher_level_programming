@@ -25,4 +25,6 @@ class Student:
 
     def reload_from_json(self, json):
         " del every thing!!! "
+        if json == {}:
+            return
         self.__dict__ = json
