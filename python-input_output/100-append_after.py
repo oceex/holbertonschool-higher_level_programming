@@ -6,7 +6,7 @@ k k kkk kk kk
 
 def append_after(filename="", search_string="", new_string=""):
     " k kkk k k k "
-    if new_string[-1:-1] == '\n':
+    if new_string[-1:] == '\n':
         new_string = new_string[:-1]
     with open(filename, "r") as x:
         v = x.read()
