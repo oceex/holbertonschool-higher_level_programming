@@ -7,4 +7,4 @@ k k k
 def read_file(filename=""):
     " reading.... "
     with open(filename) as f:
-        print(f.read())
+        print(f.read(), end="")
