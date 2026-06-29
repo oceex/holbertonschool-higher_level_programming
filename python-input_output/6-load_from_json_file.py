@@ -9,5 +9,8 @@ import json
 
 def load_from_json_file(filename):
     " json "
-    with open(filename, "r") as x:
-        return json.load(x)
+    try:
+        with open(filename, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
