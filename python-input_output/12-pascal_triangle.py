@@ -17,5 +17,5 @@ def pascal_triangle(n):
             if j == 0 or i == j:
                 x[i][j] = 1
             else:
-               x[i][j] = x[i-1][j] + x[i-1][j-1]
+                x[i][j] = x[i-1][j] + x[i-1][j-1]
     return x
