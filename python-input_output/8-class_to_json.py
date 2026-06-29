@@ -2,7 +2,6 @@
 """
 kk k k k
 """
-import json
 
 
 def class_to_json(obj):
