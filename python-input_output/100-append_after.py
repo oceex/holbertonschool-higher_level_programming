@@ -13,7 +13,7 @@ def append_after(filename="", search_string="", new_string=""):
     while c < len(x):
         for n in range(c, len(x)):
             if search_string in x[n]:
-                x.insert(n+1, new_string)
+                x.insert(n+1, new_string[:-1)
                 c = n + 2
                 break
             else:
