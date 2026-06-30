@@ -17,7 +17,7 @@ class CustomObject:
     def display(self):
         " printing "
         print(f"Name: {self.name}\nAge: {self.age}")
-        print("Is Student: {self.is_student}")
+        print(f"Is Student: {self.is_student}")
 
     def serialize(self, filename):
         " kk k k piiicklle "
@@ -29,6 +29,9 @@ class CustomObject:
         " kk k kk k de pickle "
         try:
             with open(filename, "r") as x:
-                return pickle.load(x)
-        except Eception:
+                data = pickle.load(x)
+                dummy = cls(None, None, None)
+                dummy.__dict__.update(data)
+                return dummy
+        except Exception:
             return None
