@@ -21,14 +21,14 @@ class CustomObject:
 
     def serialize(self, filename):
         " kk k k piiicklle "
-        with open(filename, "w") as x:
+        with open(filename, "wb") as x:
             pickle.dump(self.__dict__, x)
 
     @classmethod
     def deserialize(cls, filename):
         " kk k kk k de pickle "
         try:
-            with open(filename, "r") as x:
+            with open(filename, "rb") as x:
                 data = pickle.load(x)
                 dummy = cls(None, None, None)
                 dummy.__dict__.update(data)
