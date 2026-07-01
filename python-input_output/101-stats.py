@@ -4,7 +4,8 @@
 Log format:
 <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
 
-Every 10 lines, and on keyboard interruption (CTRL+C), prints:
+Every 10 lines, and on keyboard interruption (CTRL+C) or end of input,
+prints:
 - Total file size
 - Number of lines by status code, in ascending order
 """
@@ -54,6 +55,8 @@ def main():
     except KeyboardInterrupt:
         print_stats()
         raise
+    else:
+        print_stats()
 
 
 if __name__ == "__main__":
