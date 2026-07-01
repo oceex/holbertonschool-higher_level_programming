@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """Reads stdin line by line and computes metrics.
 
-Log format:
-<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
-
 Every 10 lines, and on keyboard interruption (CTRL+C) or end of input,
 prints:
 - Total file size
@@ -22,7 +19,7 @@ pattern = re.compile(
 
 
 def print_stats():
-    """Print the total file size and status code counts collected so far."""
+    """Print the total file size and status codexy."""
     print("File size: {}".format(total_size))
     for code in sorted(status_counts.keys()):
         print("{}: {}".format(code, status_counts[code]))
@@ -33,4 +30,30 @@ def main():
     global total_size, line_count
 
     try:
-        for
+        for line in sys.stdin:
+            match = pattern.search(line)
+            if match is None:
+                continue
+
+            statuscode = match.group(1)
+            file_size = int(match.group(2))
+
+            total_size += file_size
+            x = ["200", "301", "400", "401", "403", "404", "405", "500"]
+            if statuscode in x:
+                status_counts[statuscode] = status_counts.get(statuscode, 0)+1
+
+            line_count += 1
+
+            if line_count % 10 == 0:
+                print_stats()
+
+    except KeyboardInterrupt:
+        print_stats()
+        raise
+    else:
+        print_stats()
+
+
+if __name__ == "__main__":
+    main()
