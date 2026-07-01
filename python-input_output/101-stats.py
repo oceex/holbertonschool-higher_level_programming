@@ -17,7 +17,7 @@ status_counts = {}
 line_count = 0
 
 pattern = re.compile(
-    r'^\S+ - \[.*?\] "GET /projects/260 HTTP/1\.1" (\d+) (\d+)$'
+    r'"GET /projects/260 HTTP/1\.1" (\d{3}) (\d+)'
 )
 
 
@@ -34,8 +34,7 @@ def main():
 
     try:
         for line in sys.stdin:
-            line = line.strip()
-            match = pattern.match(line)
+            match = pattern.search(line)
             if match is None:
                 continue
 
