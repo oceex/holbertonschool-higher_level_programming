@@ -20,6 +20,3 @@ def fetch_and_save_posts():
             writer = csv.writer(f)
             writer.writerow(["id", "title", "body"])
             writer.writerows(v)
-
-fetch_and_print_posts()
-fetch_and_save_posts()
