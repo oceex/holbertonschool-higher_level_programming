@@ -1,40 +1,68 @@
 #!/usr/bin/python3
-import http.server, socketserver, json
+"""A simple API built using Python's http.server module.
 
-port = 8000
+Endpoints:
+    GET /        -> plain text welcome message
+    GET /data    -> JSON sample dataset
+    GET /status  -> plain text "OK"
+    GET /info    -> JSON API info
+    GET (other)  -> 404 Not Found
+"""
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import json
 
-class Handler(http.server.BaseHTTPRequestHandler):
+
+class SimpleAPIHandler(BaseHTTPRequestHandler):
+    """Request handler that routes GET requests to different endpoints."""
+
     def do_GET(self):
+        """Handle all incoming GET requests based on the request path."""
         if self.path == "/":
-            self.send_response(200)
-            self.send_header("Content-type", "text/plain")
-            self.end_headers()
-            self.wfile.write(b"Hello, this is a simple API!")
+            self._send_text(200, "Hello, this is a simple API!")
 
         elif self.path == "/data":
             data = {"name": "John", "age": 30, "city": "New York"}
-            body = json.dumps(data).encode("utf-8")
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
-            self.end_headers()
-            self.wfile.write(body)
+            self._send_json(200, data)
 
         elif self.path == "/status":
-            self.send_response(200)
-            self.send_header("Content-type", "text/plain")
-            self.end_headers()
-            self.wfile.write(b"OK")
+            self._send_text(200, "OK")
+
+        elif self.path == "/info":
+            info = {
+                "version": "1.0",
+                "description": "A simple API built with http.server"
+            }
+            self._send_json(200, info)
 
         else:
-            self.send_response(404)
-            self.send_header("Content-type", "text/plain")
-            self.end_headers()
-            self.wfile.write(b"404 Not Found: this endpoint does not exist")
+            self._send_text(404, "Endpoint not found")
 
-def main():
-    with socketserver.TCPServer(("", port), Handler) as httpd:
-        print("serving at port", port)
+    def _send_text(self, status_code, message):
+        """Send a plain text response."""
+        self.send_response(status_code)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+        self.wfile.write(message.encode("utf-8"))
+
+    def _send_json(self, status_code, data_dict):
+        """Send a JSON response."""
+        self.send_response(status_code)
+        self.send_header("Content-type", "application/json")
+        self.end_headers()
+        self.wfile.write(json.dumps(data_dict).encode("utf-8"))
+
+
+def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
+    """Instantiate and run the HTTP server on the given port."""
+    server_address = ("", port)
+    httpd = server_class(server_address, handler_class)
+    print(f"Starting server on port {port}...")
+    try:
         httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\nStopping server.")
+        httpd.server_close()
+
 
 if __name__ == "__main__":
-    main()
+    run()
