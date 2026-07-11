@@ -23,7 +23,8 @@ def user(username):
         return jsonify({"error": "User not found"}), 404
     return jsonify(user)
 
-@app.route("/add_user", methods=["POST", "GET"])
+
+@app.route("/add_user", methods=["POST"])
 def add_user():
     data = request.get_json(silent=True)
     if data is None:
@@ -38,6 +39,7 @@ def add_user():
 
     users[username] = data
     return jsonify({"message": "User added", "user": data}), 201
+
 
 if __name__ == "__main__":
     app.run()
