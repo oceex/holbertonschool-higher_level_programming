@@ -1,23 +1,36 @@
-from flask import Flask, request, jsonify
+#!/usr/bin/python3
+"""A simple Flask API demonstrating routing, JSON responses,
+dynamic routes, and POST request handling.
+"""
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-users={}
+# In-memory storage for users, keyed by username
+users = {}
+
 
 @app.route("/")
 def home():
+    """Root endpoint - welcome message."""
     return "Welcome to the Flask API!"
 
+
 @app.route("/data")
-def servingJson():
-    return jsonify(users)
+def get_data():
+    """Return a JSON list of all usernames stored in the API."""
+    return jsonify(sorted(users.keys()))
+
 
 @app.route("/status")
-def pageStatus():
+def status():
+    """Return a simple OK status."""
     return "OK"
 
+
 @app.route("/users/<username>")
-def user(username):
+def get_user(username):
+    """Return the full object corresponding to the provided username."""
     user = users.get(username)
     if user is None:
         return jsonify({"error": "User not found"}), 404
@@ -26,6 +39,7 @@ def user(username):
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
+    """Add a new user to the users dictionary from a JSON request body."""
     data = request.get_json(silent=True)
     if data is None:
         return jsonify({"error": "Invalid JSON"}), 400
