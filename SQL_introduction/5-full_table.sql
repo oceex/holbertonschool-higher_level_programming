@@ -1,2 +1,2 @@
 -- displaying the table
-SELECT * FROM first_table;
+DESC first_table;
