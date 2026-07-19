@@ -1,4 +1,5 @@
 -- null time
 SELECT score, name
 FROM second_table
-WHERE name is NOT NULL;
+WHERE name is NOT NULL
+ORDER BY score DESC;
