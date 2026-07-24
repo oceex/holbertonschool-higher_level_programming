@@ -1,19 +1,21 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+"""Script that lists all states from the database hbtn_0e_0_usa."""
 import MySQLdb
 import sys
 
+
 def main(user, password, database):
-
-    mydb = MySQLdb.connect(host='localhost',port=3306, user=user, passwd=password, db=database)
+    """Connect to MySQL and print all rows from the states table."""
+    mydb = MySQLdb.connect(host='localhost', port=3306, user=user,
+                            passwd=password, db=database)
     mycur = mydb.cursor()
-    mycur.execute('select * from states')
+    mycur.execute('SELECT * FROM states')
 
-    for i in mycur:
-        print(i)
+    for row in mycur:
+        print(row)
 
-    if mydb in locals() and mydb.is_connected():
-        mycur.close()
-        mydb.close()
+    mycur.close()
+    mydb.close()
 
 
 if __name__ == '__main__':
