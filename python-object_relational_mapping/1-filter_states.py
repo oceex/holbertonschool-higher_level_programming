@@ -9,7 +9,7 @@ def main(user, password, database):
     mydb = MySQLdb.connect(host='localhost', port=3306, user=user,
                            passwd=password, db=database)
     mycur = mydb.cursor()
-    mycur.execute('SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id ASC')
+    mycur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
     for row in mycur:
         print(row)
     mycur.close()
