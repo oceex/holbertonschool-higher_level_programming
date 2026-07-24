@@ -7,12 +7,11 @@ import sys
 def main(user, password, database):
     """Connect to MySQL and print all rows from the states table."""
     mydb = MySQLdb.connect(host='localhost', port=3306, user=user,
-                            passwd=password, db=database)
+                           passwd=password, db=database)
     mycur = mydb.cursor()
     mycur.execute('SELECT * FROM states ORDER BY id ASC')
     for row in mycur:
         print(row)
-
     mycur.close()
     mydb.close()
 
