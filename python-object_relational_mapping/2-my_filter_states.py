@@ -18,8 +18,9 @@ if __name__ == "__main__":
                          user=username, passwd=password,
                          db=db_name, charset="utf8")
     cur = db.cursor()
+    safe_name = db.escape_string(state_name).decode('utf-8')
     cur.execute("SELECT * FROM states WHERE name = '{}' \
-        ORDER BY id ASC".format(state_name))
+        ORDER BY id ASC".format(safe_name))
     rows = cur.fetchall()
     for row in rows:
         print(row)
