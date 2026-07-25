@@ -9,11 +9,12 @@ def main(user, password, database, searched):
     mydb = MySQLdb.connect(host='localhost', port=3306, user=user,
                            passwd=password, db=database)
     mycur = mydb.cursor()
+    table_name = 'states'
     mycur.execute(
-        "SELECT * FROM states WHERE STRCMP(BINARY name, '{}') = 0 "
-        "ORDER BY id ASC".format(mydb.escape_string(searched).decode())
+        "SELECT * FROM {} WHERE STRCMP(BINARY name, %s) = 0 "
+        "ORDER BY id ASC".format(table_name),
+        (searched,)
     )
-
     for row in mycur:
         print(row)
 
