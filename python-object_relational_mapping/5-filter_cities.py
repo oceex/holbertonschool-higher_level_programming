@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-Lists all cities of a given state from the
-database hbtn_0e_4_usa.
-Uses MySQLdb; SQL injection safe; results
-sorted by cities.id.
+Lists all cities of a given state from the database hbtn_0e_4_usa.
+Usage: ./5-filter_cities.py <mysql_username>
+<mysql_password> <db_name> <state_name>
+Uses MySQLdb; SQL injection safe; results sorted by cities.id.
 """
 
 import MySQLdb
@@ -11,26 +11,18 @@ import sys
 
 
 def main():
-    """Main function: connects to DB and retrieves
-     cities of a given state."""
+    """Connect to the DB, fetch cities for the given
+     state, and print them comma separated."""
     if len(sys.argv) != 5:
         return
 
-    username = sys.argv[1]
-    password = sys.argv[2]
-    dbname = sys.argv[3]
-    state_name = sys.argv[4]
+    user, passwd, dbname, state_name = (sys.argv[1], sys.argv[2],
+                                        sys.argv[3], sys.argv[4])
 
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=dbname,
-        charset="utf8"
-    )
-
-    cur = db.cursor()
+    conn = MySQLdb.connect(host="localhost", port=3306,
+                           user=user, passwd=passwd, db=dbname,
+                           charset="utf8")
+    cur = conn.cursor()
 
     query = """
         SELECT cities.name
@@ -39,20 +31,15 @@ def main():
         WHERE states.name = %s
         ORDER BY cities.id ASC;
     """
-
     cur.execute(query, (state_name,))
     rows = cur.fetchall()
 
-    cities = [row[0] for row in rows]
-    if not cities:
-        print()
-    elif len(cities) == 1:
-        print(cities[0])
-    else:
-        print(", ".join(cities))
+    # Extract names and print as a single comma-separated line
+    names = [row[0] for row in rows]
+    print(", ".join(names))
 
     cur.close()
-    db.close()
+    conn.close()
 
 
 if __name__ == "__main__":
