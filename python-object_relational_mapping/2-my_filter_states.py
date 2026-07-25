@@ -10,10 +10,10 @@ def main(user, password, database, searched):
                            passwd=password, db=database)
     mycur = mydb.cursor()
     mycur.execute(
-        "SELECT * FROM states WHERE "
-        "STRCMP(BINARY name, %s) = 0 ORDER BY id ASC",
-        (searched,)
+        "SELECT * FROM states WHERE STRCMP(BINARY name, '{}') = 0 "
+        "ORDER BY id ASC".format(mydb.escape_string(searched).decode())
     )
+
     for row in mycur:
         print(row)
 
