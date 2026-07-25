@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-Lists all cities of a given state from the database hbtn_0e_4_usa.
-Uses MySQLdb; SQL injection safe; results sorted by cities.id.
+Lists all cities of a given state from the
+database hbtn_0e_4_usa.
+Uses MySQLdb; SQL injection safe; results
+sorted by cities.id.
 """
 
 import MySQLdb
@@ -9,7 +11,8 @@ import sys
 
 
 def main():
-    """Main function: connects to DB and retrieves cities of a given state."""
+    """Main function: connects to DB and retrieves
+     cities of a given state."""
     if len(sys.argv) != 5:
         return
 
