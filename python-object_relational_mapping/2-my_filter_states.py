@@ -12,7 +12,7 @@ def main(user, password, database, searched):
     query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
         searched)
     mycur.execute(query)
-    for row in mycur:
+    for row in mycur.fetchall():
         print(row)
 
     mycur.close()
