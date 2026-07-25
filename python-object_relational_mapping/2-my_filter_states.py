@@ -3,12 +3,14 @@
 import MySQLdb
 import sys
 
+
 def main(user, password, database, searched):
-    """Connect to MySQL and print states whose name matches the searched word"""
+    """Connect to MySQL and print states whose name matches the searche word"""
     mydb = MySQLdb.connect(host='localhost', port=3306, user=user,
                            passwd=password, db=database)
     mycur = mydb.cursor()
-    mycur.execute("SELECT * FROM states WHERE STRCMP(name, '{0}') = 0".format(searched))
+    mycur.execute("SELECT * FROM states WHERE "
+                  "STRCMP(name, '{}') = 0".format(searched))
     for row in mycur:
         print(row)
 
