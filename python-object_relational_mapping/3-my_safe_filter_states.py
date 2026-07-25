@@ -5,6 +5,7 @@ matching a name given by the user, safe from MySQL injection.
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
     """Connect to a MySQL server and safely display all states whose
     name matches the argument given by the user, ordered by states.id.
