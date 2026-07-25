@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-"""Module that lists all states from the database hbtn_0e_0_usa
-matching a name given by the user, safe from MySQL injection.
+"""Script that lists all states matching a name from the database
+hbtn_0e_0_usa, safe from MySQL injection.
 """
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
-    """Connect to a MySQL server and safely display all states whose
-    name matches the argument given by the user, ordered by states.id.
+    """Connect to MySQL server and display states matching the given name.
+
+    Takes 4 arguments: mysql username, mysql password, database name
+    and the state name to search for. The query is parameterized to
+    protect against SQL injection.
     """
     username = sys.argv[1]
     password = sys.argv[2]
@@ -19,8 +21,8 @@ if __name__ == "__main__":
                          user=username, passwd=password,
                          db=db_name, charset="utf8")
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cur.execute(query, (state_name,))
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
+                (state_name,))
     rows = cur.fetchall()
     for row in rows:
         print(row)
