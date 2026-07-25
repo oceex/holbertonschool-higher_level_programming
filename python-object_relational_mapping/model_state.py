@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """
-Defines the State model and Base for SQLAlchemy ORM mapping to the states table.
+Defines the State model and Base for SQLAlchemy ORM mapping to the
+states table.
 
 This module provides:
 - Base: the declarative base used by SQLAlchemy.
-- State: a mapped class representing the states table with an auto-incrementing
+- State: a mapped class representing the states table with
+an auto-incrementing
   integer primary key 'id' and a non-null string 'name' (max 128 characters).
 """
 from sqlalchemy import Column, Integer, String
