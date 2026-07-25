@@ -10,7 +10,7 @@ def main(user, password, database, searched):
                            passwd=password, db=database)
     mycur = mydb.cursor()
     mycur.execute("SELECT * FROM states WHERE "
-                  "STRCMP(name, '{}') = 0".format(searched))
+                  "STRCMP(BINARY name, '{}') = 0".format(searched))
     for row in mycur:
         print(row)
 
