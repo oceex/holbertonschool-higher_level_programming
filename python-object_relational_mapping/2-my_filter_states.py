@@ -9,10 +9,10 @@ def main(user, password, database, searched):
     mydb = MySQLdb.connect(host='localhost', port=3306, user=user,
                            passwd=password, db=database, charset="utf8")
     mycur = mydb.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
-        searched)
-    mycur.execute(query)
-    for row in mycur.fetchall():
+    mycur.execute("SELECT * FROM states WHERE BINARY name = '{}' \
+    ORDER BY states.id ASC".format(searched))
+    rows = mycur.fetchall()
+    for row in rows:
         print(row)
 
     mycur.close()
