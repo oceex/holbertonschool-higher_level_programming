@@ -1,23 +1,29 @@
 #!/usr/bin/python3
-"""Script that lists all states from the database hbtn_0e_0_usa."""
+"""Module that lists all states from the database hbtn_0e_0_usa
+matching a name given by the user, using MySQLdb.
+"""
 import MySQLdb
 import sys
 
+if __name__ == "__main__":
+    """Connect to a MySQL server and display all states whose name
+    matches the argument given by the user, ordered by states.id.
+    """
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    state_name = sys.argv[4]
 
-def main(user, password, database, searched):
-    """Connect to MySQL and print states whose name matches the
-    searched word"""
-    mydb = MySQLdb.connect(host='localhost', port=3306, user=user,
-                           passwd=password, db=database, charset="utf8")
-    mycur = mydb.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    mycur.execute(query, (searched,))
-
-    for row in mycur.fetchall():
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=username, passwd=password,
+                         db=db_name, charset="utf8")
+    cur = db.cursor()
+    safe_name = db.escape_string(state_name).decode('utf-8')
+    query = ("SELECT * FROM states WHERE name = '{}' "
+             "ORDER BY id ASC").format(safe_name)
+    cur.execute(query)
+    rows = cur.fetchall()
+    for row in rows:
         print(row)
-    mycur.close()
-    mydb.close()
-
-
-if __name__ == '__main__':
-    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    cur.close()
+    db.close()
