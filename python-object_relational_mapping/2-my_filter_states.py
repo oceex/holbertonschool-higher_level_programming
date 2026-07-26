@@ -12,7 +12,7 @@ def main(usr, pas, db, arg):
                          user=usr, passwd=pas,
                          db=db, charset="utf8")
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}' "
+    cur.execute("SELECT * FROM states WHERE BINARY name = '{}' "
                 "ORDER BY id ASC".format(arg))
     rows = cur.fetchall()
     for row in rows:
