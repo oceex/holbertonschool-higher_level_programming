@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-"""Lists all State objects containing letter 'a' from hbtn_0e_6_usa."""
+"""
+Lists all State objects containing letter 'a' from argv[3].
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-if __name__ == "__main__":
+
+def main(usr, pas, db):
+    """" lists all State objects that contain the letter a from db """
+
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-            sys.argv[1], sys.argv[2], sys.argv[3]),
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(usr, pas, db),
         pool_pre_ping=True)
+    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -20,3 +25,7 @@ if __name__ == "__main__":
         print("{}: {}".format(state.id, state.name))
 
     session.close()
+
+
+if __name__ == '__main__':
+    main(sys.argv[1], sys.argv[2], sys.argv[3])
