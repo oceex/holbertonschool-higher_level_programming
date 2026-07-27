@@ -6,13 +6,13 @@ query, sorted ascending by states.id and cities.id.
 """
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, joinedload
 from relationship_state import Base, State
 from relationship_city import City
 
 
 def main(usr, pas, db):
-    """"  lists all State objects, and corresponding
+    """ lists all State objects, and corresponding
     City objects, contained in db """
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(usr, pas, db),
@@ -22,13 +22,12 @@ def main(usr, pas, db):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).all()
+    states = session.query(State).options(
+        joinedload(State.cities)).order_by(State.id).all()
 
     for state in states:
         print("{}: {}".format(state.id, state.name))
-        cities = session.query(City).filter(
-            City.state_id == state.id).order_by(City.id).all()
-        for city in cities:
+        for city in state.cities:
             print("\t{}: {}".format(city.id, city.name))
 
     session.close()
