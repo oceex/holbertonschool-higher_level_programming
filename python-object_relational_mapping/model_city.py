@@ -15,7 +15,6 @@ from model_state import Base
 
 class City(Base):
     """SQLAlchemy City model mapped to the 'cities' table.
-
     Attributes:
         id (int): Auto-generated unique integer primary key, not nullable.
         name (str): City name, string up to 128 characters, not nullable.
