@@ -8,10 +8,10 @@ from relationship_state import Base, State
 from relationship_city import City
 
 
-def main(usr,pas, db):
+def main(usr, pas, db):
     """" script that lists all City objects from db """
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(usr,pas, db),
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(usr, pas, db),
         pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
