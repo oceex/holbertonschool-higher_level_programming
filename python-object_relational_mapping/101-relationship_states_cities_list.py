@@ -26,9 +26,10 @@ def main(usr, pas, db):
 
     for state in states:
         print("{}: {}".format(state.id, state.name))
-        cities = session.query(City).filter(City.state_id == state.id).all()
+        cities = session.query(City).filter(
+            City.state_id == state.id).order_by(City.id).all()
         for city in cities:
-            print("\t{}: {}".format(city.id, city.name))
+            print("    {}: {}".format(city.id, city.name))
 
     session.close()
 
