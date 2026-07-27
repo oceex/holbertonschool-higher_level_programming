@@ -23,12 +23,13 @@ def main(usr, pas, db):
     session = Session()
 
     states = session.query(State).options(
-        joinedload(State.cities)).order_by(State.id).all()
+        joinedload(State.cities)
+    ).order_by(State.id).all()
 
     for state in states:
         print("{}: {}".format(state.id, state.name))
-        for city in state.cities:
-            print("\t{}: {}".format(city.id, city.name))
+        for city in sorted(state.cities, key=lambda c: c.id):
+            print("    {}: {}".format(city.id, city.name))
 
     session.close()
 
