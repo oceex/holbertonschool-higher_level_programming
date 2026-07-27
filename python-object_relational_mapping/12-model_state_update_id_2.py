@@ -1,22 +1,29 @@
 #!/usr/bin/python3
-"""Changes the name of the State with id = 2 to 'New Mexico'."""
+"""
+Changes the name of the State with id = 2 to 'New Mexico'.
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-if __name__ == "__main__":
+
+def main(usr, pas, db):
+    """" Changes the name of the State with id = 2 to 'New Mexico'. """
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-            sys.argv[1], sys.argv[2], sys.argv[3]),
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(usr, pas, db),
         pool_pre_ping=True)
+    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter(State.id == 2).first()
-    if state is not None:
-        state.name = "New Mexico"
-        session.commit()
+    (session.query(State).filter(State.id == 2)
+     .update({State.name: "New Mexico"}))
+    session.commit()
 
     session.close()
+
+
+if __name__ == '__main__':
+    main(sys.argv[1], sys.argv[2], sys.argv[3])
