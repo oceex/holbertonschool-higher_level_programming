@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-"""Creates the State 'California' with the City 'San Francisco'
-in the database hbtn_0e_100_usa, using the cities relationship."""
+"""
+Creates the State 'California' with the City 'San Francisco'
+in the database hbtn_0e_100_usa, using the cities relationship.
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 
-if __name__ == "__main__":
+
+def main(usr, pas, db):
+    """" Creates the State 'California' with the City 'San Francisco' """
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-            sys.argv[1], sys.argv[2], sys.argv[3]),
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(usr, pas, db),
         pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
@@ -27,3 +30,7 @@ if __name__ == "__main__":
     session.commit()
 
     session.close()
+
+
+if __name__ == '__main__':
+    main(sys.argv[1], sys.argv[2], sys.argv[3])

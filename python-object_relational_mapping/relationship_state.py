@@ -19,7 +19,8 @@ Base = declarative_base()
 
 
 class State(Base):
-    """SQLAlchemy State model mapped to the 'states' table.
+    """
+    SQLAlchemy State model mapped to the 'states' table.
 
     Attributes:
         id (int): Auto-generated unique integer primary key, not nullable.
