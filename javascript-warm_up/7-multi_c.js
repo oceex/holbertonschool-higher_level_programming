@@ -1,6 +1,6 @@
 #!/usr/bin/node
 let x = parseInt(process.argv[2]);
-if (x) {
+if (x > 0) {
   while (x) {
     console.log('C is fun');
     x -= 1;
