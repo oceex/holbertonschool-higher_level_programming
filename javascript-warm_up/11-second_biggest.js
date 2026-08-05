@@ -8,6 +8,6 @@ if (process.argv.length <= 2) {
     x.push(parseInt(process.argv[c]));
     c += 1;
   }
-  x = x.sort();
+  x.sort((a, b) => a - b)
   console.log(x[x.length - 2]);
 }
