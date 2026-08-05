@@ -1,9 +1,7 @@
 #!/usr/bin/node
-let y = 2
-while (process.argv[y] !== undefined) {
-    console.log(process.argv[y]);
-    y += 1;
+if (process.argv[2] !== undefined) {
+    console.log(process.argv[2]);
 }
-if (y === 2){
+else{
     console.log("No argument");
 }
