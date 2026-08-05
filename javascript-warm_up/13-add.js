@@ -1,4 +1,4 @@
 #!/usr/bin/node
-add = function (x, y) {
+const add = function (x, y) {
   return x + y;
 };
