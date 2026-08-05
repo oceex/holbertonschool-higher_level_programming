@@ -1,6 +1,6 @@
 #!/usr/bin/node
 let c = 2;
-let x = [];
+const x = [];
 if (process.argv.length <= 2) {
   console.log(0);
 } else {
@@ -8,6 +8,6 @@ if (process.argv.length <= 2) {
     x.push(parseInt(process.argv[c]));
     c += 1;
   }
-  x.sort((a, b) => a - b)
+  x.sort((a, b) => a - b);
   console.log(x[x.length - 2]);
 }
