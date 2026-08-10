@@ -31,7 +31,7 @@ def generate_invitations(template, attendees):
                 if attendees[i][attendee]:
                     templat = templat.replace('{'+attendee+'}', attendees[i][attendee])
                 else:
-                    templat = templat.replace('{'+attendee+'}', f"{attendee}: N/A")
+                    templat = templat.replace('{'+attendee+'}', "N/A")
 
             with open(f'output_{i+1}.txt', 'w') as f:
                 f.write(templat)
