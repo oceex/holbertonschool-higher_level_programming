@@ -11,9 +11,10 @@ def generate_invitations(template, attendees):
     if not template:
         raise TypeError('Template is empty, no output files generated.')
     if not attendees:
-        raise TypeError('No data provided, no output files generated')
-    try:
+        print('No data provided, no output files generated')
+        return
 
+    try:
         for i in range(len(attendees)):
             templat = template
             for attendee in attendees[i]:
