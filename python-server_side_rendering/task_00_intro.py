@@ -1,17 +1,27 @@
-import os.path
+import logging
+import os
 
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 def generate_invitations(template, attendees):
-    if isinstance(template, str) and isinstance(attendees, list):
-        for attendee in attendees:
-            if not isinstance(attendee, dict):
-                raise TypeError('attendees list must have a dictionaries')
-    else:
-        raise TypeError('template must be a string and attendees must be a list')
+    if not isinstance(template, str):
+        logging.error("Invalid input: template must be a string.")
+        return
+
+    if not isinstance(attendees, list) or not all(
+            isinstance(attendee, dict) for attendee in attendees
+    ):
+        logging.error(
+            "Invalid input: attendees must be a list of dictionaries."
+        )
+        return
+
     if not template:
-        raise TypeError('Template is empty, no output files generated.')
+        logging.error("Template is empty, no output files generated.")
+        return
+
     if not attendees:
-        print('No data provided, no output files generated')
+        logging.error("No data provided, no output files generated.")
         return
 
     try:
