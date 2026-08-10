@@ -9,7 +9,7 @@ def generate_invitations(template, attendees):
     else:
         raise TypeError('template must be a string and attendees must be a list')
     if not template:
-        raise TypeError('Template is empty, no output files generated.')
+        raise TypeError('Template is empty, no output files generated')
     if not attendees:
         print('No data provided, no output files generated')
         return
