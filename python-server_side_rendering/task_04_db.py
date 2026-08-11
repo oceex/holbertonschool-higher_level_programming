@@ -6,6 +6,39 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+
+def read_json_data(filepath='products.json'):
+    with open(filepath, 'r') as f:
+        data = json.load(f)
+    # Normalize types so JSON and CSV output match
+    for product in data:
+        product['id'] = int(product['id'])
+        product['price'] = float(product['price'])
+    return data
+
+
+def read_csv_data(filepath='products.csv'):
+    products = []
+    with open(filepath, newline='') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            products.append({
+                'id': int(row['id']),
+                'name': row['name'],
+                'category': row['category'],
+                'price': float(row['price'])
+            })
+    return products
+
+def read_db_data(filepath='products.db'):
+    conn = sqlite3.connect(filepath)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    cursor.execute("select * from products")
+    products = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+    return products
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -55,36 +88,3 @@ def products():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
-
-
-def read_json_data(filepath='products.json'):
-    with open(filepath, 'r') as f:
-        data = json.load(f)
-    # Normalize types so JSON and CSV output match
-    for product in data:
-        product['id'] = int(product['id'])
-        product['price'] = float(product['price'])
-    return data
-
-
-def read_csv_data(filepath='products.csv'):
-    products = []
-    with open(filepath, newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            products.append({
-                'id': int(row['id']),
-                'name': row['name'],
-                'category': row['category'],
-                'price': float(row['price'])
-            })
-    return products
-
-def read_db_data(filepath='products.db'):
-    conn = sqlite3.connect(filepath)
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    cursor.execute("select * from products")
-    products = [dict(row) for row in cursor.fetchall()]
-    conn.close()
-    return products
