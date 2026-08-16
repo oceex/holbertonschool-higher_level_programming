@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def magic_string(c=[0]):
     c[0] += 1
-    return "BestSchool" if c[0] == 1 else "BestSchool, "*(c[0]-1) + "BestSchool"
+    return ", ".join(["BestSchool"] * n[0])
